@@ -2,16 +2,16 @@
 
 <div class="row marketing">
 
-<div id="sandbox-container" style="width: 200px">
-<jo-date class="input-group date" ng-model="myDate" options="myDateOptions" on-change="myDateFormat(date, event)">
-  <input type="text" class="form-control">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
-</jo-date>
-</div>
-My date: {{myDate}}
-  <h4>HTML5 Boilerplate</h4>
+
+  <h4>Date Picker Example</h4>
+  <div style="width: 50%">
+  	<jo-date class="input-group date" ng-model="myDate" options="myDateOptions" on-change="myDateFormat(date, event)">
+  	  <input type="text" class="form-control">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+    </jo-date>
+  </div>
   <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
+	My date: {{myDate}}
   </p>
 
   <h4>Angular</h4>

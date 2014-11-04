@@ -1,3 +1,4 @@
+/* global jQuery: true */
 'use strict';
 
 /**
@@ -24,9 +25,7 @@ angular.module('shFormApp')
       		jQuery(ct).attr(aName, jQuery(element).attr(aName));
       		jQuery(element).attr(aName, '');
       	});
-    	
       	var datePickerEl = jQuery(ct);
-    	
       	datePickerEl.datepicker(
       			jQuery.extend({
       				autoclose: true,
@@ -34,9 +33,8 @@ angular.module('shFormApp')
       			}, scope.options)
       	).on('changeDate', function(event) {
         	scope.$apply(function() {
-        		
+        	  var utcDate = datePickerEl.datepicker('getUTCDate');
         		if(typeof scope.onChange === 'function') {
-        			var utcDate = datePickerEl.datepicker('getUTCDate');
         			var val = scope.onChange({date: utcDate, event: event});
         			ngModel.$setViewValue(val || utcDate);
         		} else {
@@ -45,11 +43,11 @@ angular.module('shFormApp')
         	});
         });
       	
-        scope.$watch('model', function(newValue, oldValue) {
+        scope.$watch('model', function(newValue) {
         	if(newValue) {
         		var date = new Date(newValue);
         		if(isNaN(date.getTime())) {
-        			console.warn('Unparsable date', newValue, 'check Date.parse() documentation for valid values.')
+        			console.warn('Unparsable date', newValue, 'check Date.parse() documentation for valid values.');
         		} else {        			
         			datePickerEl.datepicker('update', date);
         		}
