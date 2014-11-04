@@ -7,7 +7,8 @@
   <div style="width: 50%">
   	<jo-date class="input-group date" ng-model="myDate" options="myDateOptions" on-change="myDateFormat(date, event)">
   	  <input type="text" class="form-control">
-      <span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+      <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+      <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
     </jo-date>
   </div>
   <p>
@@ -15,10 +16,22 @@
   </p>
 
   <h4>Angular</h4>
+    <div class="input-append bootstrap-timepicker">
+        <input id="timepicker1" type="text" class="input-small">
+        <span class="add-on"><i class="glyphicon glyphicon-time"></i></span>
+    </div>
   <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
   </p>
 
   <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
+  <input style="width: 30px; text-align: center;" value="26">
+  <input style="width: 80px; text-align: center;" value="December">
+  <input style="width: 50px; text-align: center;" value="1984"> 
+  <i class="glyphicon glyphicon-calendar"></i>
+  &nbsp;&nbsp;&nbsp;
+  <input style="width: 90px; text-align: center;" value="01:05 AM">
+  <i class="glyphicon glyphicon-time"></i>
+  
+  <p>  
+  Spectacular Test Runner for JavaScript.</p>
 </div>

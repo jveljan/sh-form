@@ -25,5 +25,6 @@ angular.module('shFormApp')
       console.log(date, event);
     };
     
-
+    
+    jQuery('#timepicker1').timepicker();
   });
